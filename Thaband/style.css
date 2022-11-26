@@ -20,9 +20,16 @@
     
 }
 
+#header #nav li {
+    display: inline-block;
+    position:relative;
+}
+
 #header #nav li a {
     line-height: 46px;
     color: white;
+   
+    
 }
 
 #header #nav li:hover a {
@@ -32,7 +39,8 @@
 
 
 #header #nav #subnav li {
-    display: none;
+    display:block;
+    position: relative;
 }
 
 
