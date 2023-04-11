@@ -1,9 +1,47 @@
 *{
     margin:0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    
     
 }
+html {
+    font-family:Arial, Helvetica, sans-serif;
+}
+.clear {
+    clear: both;
+}
+
+
+/*common*/
+.colFull{
+    width: 95% !important; 
+    
+}
+.text-center{
+    text-align: center;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+   
+    /* margin-left: 8px;
+    margin-right: 8px; */
+    
+}
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col-half{
+    width: 40%;
+    
+    
+    margin-bottom: 10px;
+    
+}
+
+/*main*/
 #header {
     height: 46px;
     /* width: 100%; */
@@ -12,14 +50,18 @@
     top:0;
     left: 0;
     right: 0;
+    z-index:1;
+    
 }
 #nav {
     display: inline-block;
+    width: 100%;
 }
 #nav li {
     /* position: relative; */
     display: inline-block;
     position: relative;
+    font-size: 15px
 }
 #nav li a {
     line-height: 46px;
@@ -86,14 +128,336 @@
 
 
 #slider {
-    margin-top: 46px;
-    background-color: #f44336;
-    height: 200px;
     position: relative;
+    margin-top: 46px;
+    padding-top: 50%; /* val là % thì là chiều dọc có giá trị bằng 50% chiều ngang của chính nó*/
+    background: url('/TheBand/assets/img/member1.jpg') top center / cover no-repeat;
+
 }
-#slider .slider-text {
+#slider .text-content {
     position: absolute;
-    top:60%;
-    left: 45%;
+    bottom: 47px;
+    color: #fff;
+
+    width: 100%;
+    text-align: center;
+
+    /* left: 50%;
+    transform: translateX(-50%);
+    text-align: center; */
+}
+#slider .text-heading {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+}
+
+.content{
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+    height: 1000px;
+
+}
+
+ .content #heading-content {
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+ .content  .sub-heading{
+    font-size: 15px;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+ .content #heading-content,
+ .content  .sub-heading {
+    text-align: center;
+}
+
+ .content .about-content {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 15px; /* tiếng việt là 1.6*/
+}
+.content .Member-list {
     
+    margin-top: 48px;
+}
+.content .member-Item {
+    float: left;
+    width: calc(100%/3);  
+    
+    
+}
+
+.content .member-name {
+    font-size: 15px;
+    
+}
+
+.content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 4px;
+}
+#tour-section {
+    
+    background-color: black;
+    color: #fff;
+    
+}
+.calenda  li {
+    background: white;
+    list-style:none ;
+    color: #757575;
+    padding: 10px 2%;
+    
+    border-bottom: 1px solid #ccc ;
+    font-size: 15px;
+    
+    
+    
+    
+}
+.calenda>li>.sold-out {
+    display: inline-block;
+    
+    margin-left: 15px;
+    padding: 5px 7px;
+    color: #fff;
+    background-color: #f44336;
+    
+}
+
+.calenda>li>.num-div {
+    
+    float: right;
+    margin-right: 15px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    padding : 2px 8px;
+    text-align: center;
+}
+
+
+
+.PlaceList{
+    
+   
+    margin-top: 32px;
+    margin-bottom: 32px;
+   
+    
+    
+}
+.PlaceItem  {
+   
+    
+    width: 31.29%;
+    
+    
+    
+}
+.place-content{
+    background-color: #fff;
+}
+
+.place-img{
+    display: block;
+    
+    width: 100%;
+}
+.place-img:hover{
+   opacity: 0.6; 
+}
+
+
+.place-content {
+    font-size: 15px;
+    padding: 16px;
+    color: black;
+    font-weight: 500;
+}
+.place-Time {
+    margin-top: 15px;
+}
+.place-desc {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.place-buy-btn{
+    margin-top: 25px;
+    width: 107px;
+    height: 42px;
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    padding: 11px 16px;
+    text-decoration: none;
+}
+.place-buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+    border: #ccc;
+}
+
+.modal {
+    
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+#modal-container {
+    position: relative;
+    background-color: #fff;
+    min-height: 410px;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.5s;
+}
+.modal-header {
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    padding: 38px 0;
+    background-color: #009688;
+    color: #fff;
+}
+.icon-header-modal{
+    margin-right: 16px;
+}
+
+.modal-close{
+    position: absolute;
+    right: 0;
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+}
+.modal-close:hover {
+    color: #ccc;
+}
+.modal-body {
+    padding: 16px;
+}
+
+.modal-lable {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input{
+    margin-bottom: 24px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+}
+#buy-ticket{
+    width: 100%;
+    padding: 18px;
+    background-color: #009688;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    
+}
+
+#buy-ticket:hover {
+    opacity: 0.9;
+}
+
+.modal-footer {
+    text-align: right;
+    padding: 16px;
+    
+}
+
+.modal-footer a {
+    color: #2196F3;
+}
+.open {
+    display: flex;
+}
+
+
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/*contact form*/
+#contact-section{
+    display: block;
+}
+.contact-content {
+    margin-top: 48px;
+    
+    
+}
+.contact-infor{
+    font-size: 18px;
+    line-height: 1.5;
+    
+}
+.contact-infor i[class*="ti-"] {
+    
+    width: 30px;
+    
+    font-size: 18px;
+    
+}
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.button-submit{
+    padding: 12px 16px;
+    margin-top: 10px;
+    float: right;
+    color: #fff;
+    background-color: #000;
+   
+    
+}
+.form-contact{
+    width: 100%;
+
+}
+.left-mar{
+    margin-left: 33px;
 }
